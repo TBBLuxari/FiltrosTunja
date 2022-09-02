@@ -1,0 +1,250 @@
+<%- layout('layouts/main.ejs')%>
+
+<style>
+    #div1
+    {
+        background-color: rgb(37, 141, 226);
+        width: 100%;
+        height: 100px;
+        display: flex;
+    }
+    #div2
+    {
+        background-image: url("https://res.cloudinary.com/tbbluxari/image/upload/v1661175097/ADN-Crea/LogoBlancoCrea_1_hmqwv1.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        width: 60%;
+        height: 100%;
+        margin-left: 20%;
+    }
+    #boton1
+    {
+        position: relative;
+        background-color: rgb(21, 207, 207);
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        width: 10%;
+        margin-left: 10%;
+    }
+    #boton1:hover 
+    {
+        background-color: #000000;
+        color: white;
+    }
+    #contenedor
+    {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(233, 233, 233);
+        display: flex;
+    }
+    #informacion
+    {
+        background-color: white;
+        margin-top: 3%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: 80%;
+        border-radius: 8px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: grey;
+    }
+    #Form1
+    {  
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        text-align: center;
+    }
+    #divf1
+    {
+        width: 65%;
+        height: 100%;
+        /*background-color: darkseagreen;*/
+    }
+    #divf2
+    {
+        width: 35%;
+        height: 100%;
+        /*background-color:hotpink;*/
+    }
+    p
+    {
+        margin-top: 5%;
+        margin-bottom: 0;
+        margin-left: 10%;
+        text-align: start;
+    }
+    #ip1
+    {     
+        width: 80%;
+        height: 10%;
+        border-radius: 5px;
+        font-size: 16px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        background-color: rgba(128, 128, 128, 0.2);
+    }
+    #ip2
+    {     
+        width: 80%;
+        height: 10%;
+        border-radius: 5px;
+        font-size: 16px;
+        border-style: solid;
+        border-width: 1px;
+        border-color:gray;
+        background-color: rgba(128, 128, 128, 0.2);
+    }  
+    #ip3
+    {     
+        width: 80%;
+        height: 30%;
+        border-radius: 5px;
+        font-size: 16px;
+        border-style: solid;
+        border-color:gray;
+        background-color: rgba(128, 128, 128, 0.2);
+    }  
+    #ip4
+    {     
+        width: 80%;
+        height: 10%;
+        border-radius: 5px;
+        font-size: 16px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        background-color: rgba(128, 128, 128, 0.2);
+    }
+    #s1
+    {
+        width: 80%;
+        height: 8%;
+        border-radius: 8px;
+        background-color: rgba(128, 128, 128, 0.2);
+    } 
+    #s2
+    {
+        width: 80%;
+        height: 8%;
+        border-radius: 8px;
+        background-color: rgba(128, 128, 128, 0.2);
+    }  
+    #enviar
+    {
+        margin-top: 15%;
+        width: 70%;
+        height: 50%;
+        background-color: rgba(17, 140, 216);
+        border-radius: 8px;
+        border-color: rgba(128, 128, 128);
+        border-style: solid;
+        font-size: 44px;
+        color: white;
+    }
+    #mayor
+    {
+        background-color:  rgba(128, 128, 128, 0);
+
+        width: 60px;
+        margin-right: 40%;
+        margin-top: 16px;
+
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+    }
+    #menor
+    {
+        background-color:  rgba(128, 128, 128, 0);
+
+        width: 60px;
+        margin-right: 40%;
+        margin-top: 16px;
+
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+    }
+    html,body{
+        height:100%;
+        width:100%;
+        margin:0;
+        overflow: hidden;
+    }
+    body
+    {
+        display: block;
+    }
+</style>
+
+<!--Navbar-->
+<div id="div1">
+    <div id="div2"></div>
+    <!--button  id="boton1">Cerrar Sesion </button-->
+</div>
+
+
+<div id="contenedor">
+    <div id="informacion">
+        <form action="/filtros" id="Form1"  method="post">  
+            <div id="divf1">
+                <p>Especifico</p>
+                <input id="ip1"  type="text" name="email" placeholder="Correo">
+                <p>Titulo</p>
+                <input id="ip2"  type="text" name="titulo" placeholder="Titulo de la notificacion" required>
+                <p>Mensaje</p>
+                <textarea id="ip3" name="mensaje" placeholder="Mensaje de la notificacion"></textarea>
+                <p>Link</p>
+                <input id="ip4"  type="text" name="link" placeholder="Contenido de la notificacion" required>
+            </div>
+            <div id="divf2">
+
+                <p>Filtros</p>
+                <p>Notificaciones</p>
+                <select id="s1" name="notificacion" required>
+                    <option value="0">seleccionar notificacion</option>
+                    <option value="1">notificacion p</option>
+                    <option value="2">notificacion 1 </option>
+                    <option value="3">notificacion 2</option>
+                    <option value="4">notificacion 3</option>
+                    <option value="5">notificacion 4</option>
+                </select>
+                <p>Filtros</p>
+                <select id="s2" name="filtros" >
+                    <option value="0">seleccionar filtro</option>
+                    <option value="1">Todos</option>
+                    <option value="2">Mayores a X</option>
+                    <option value="3">Menores a X</option>
+                    <option value="4">Mayor a X y menor a X</option>
+                </select>
+
+                <br>
+                <label for="mayor">Mayor a</label>
+                <input type="number" id="mayor" name="mayor" value="">
+                <br>
+                <label for="menor">Menor a</label>
+                <input type="number" id="menor" name="menor" value="">
+
+                <input type="submit" value="Enviar"  id="enviar"></input>
+            </div>
+      
+        </form>
+    </div>
+ 
+</div>
+
+
